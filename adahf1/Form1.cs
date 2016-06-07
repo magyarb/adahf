@@ -148,7 +148,7 @@ namespace adahf1
             }
             DateTime finish = DateTime.Now;
             TimeSpan len = finish - start;
-            labelHamming.Text += "\n\nTime spent: " + len.TotalMilliseconds + " ms.";
+            labelHamming.Text += "\n\nTime spent: " + len.TotalMilliseconds + " ms.\n\n\n\n\n";
         }
 
         public int GetHammingDistance(List<int> imageAsVector1, List<int> imageAsVector2)
@@ -453,7 +453,13 @@ namespace adahf1
 
         private void button8_Click(object sender, EventArgs e)
         {
-            doIterate();
+            DateTime start = DateTime.Now;
+            for (int i = 0; i <=256; i++)
+            {doIterate();}
+            DateTime finish = DateTime.Now;
+            TimeSpan len = finish - start;
+            label256.Text = "Time spent: " + len.TotalMilliseconds + " ms.";
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -527,6 +533,11 @@ namespace adahf1
         {
             BuildMMatrix();
             BuildZMatrix();
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

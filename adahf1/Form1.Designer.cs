@@ -42,6 +42,8 @@
             this.algoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button10 = new System.Windows.Forms.Button();
+            this.mtest = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -50,6 +52,10 @@
             this.LeftPanel = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.vektorszorz = new System.Windows.Forms.Button();
+            this.buttonHamming = new System.Windows.Forms.Button();
+            this.labelHamming = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,12 +65,8 @@
             this.speedbox = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelHamming = new System.Windows.Forms.Label();
-            this.buttonHamming = new System.Windows.Forms.Button();
-            this.mtest = new System.Windows.Forms.Button();
-            this.vektorszorz = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.label256 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -72,6 +74,7 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -81,7 +84,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel3,
             this.toolStripStatusLabel4});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 743);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 711);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1201, 22);
             this.statusStrip1.TabIndex = 0;
@@ -187,10 +190,11 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Info;
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Panel2.Controls.Add(this.label256);
             this.splitContainer1.Panel2.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel2.Controls.Add(this.vektorszorz);
             this.splitContainer1.Panel2.Controls.Add(this.buttonHamming);
-            this.splitContainer1.Panel2.Controls.Add(this.labelHamming);
             this.splitContainer1.Panel2.Controls.Add(this.button9);
             this.splitContainer1.Panel2.Controls.Add(this.button8);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
@@ -199,9 +203,30 @@
             this.splitContainer1.Panel2.Controls.Add(this.iterbox);
             this.splitContainer1.Panel2.Controls.Add(this.speedbox);
             this.splitContainer1.Panel2.Controls.Add(this.button6);
-            this.splitContainer1.Size = new System.Drawing.Size(1201, 719);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splitContainer1.Size = new System.Drawing.Size(1201, 687);
             this.splitContainer1.SplitterDistance = 646;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(455, 304);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 9;
+            this.button10.Text = "MZ matrices";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // mtest
+            // 
+            this.mtest.Location = new System.Drawing.Point(378, 304);
+            this.mtest.Name = "mtest";
+            this.mtest.Size = new System.Drawing.Size(71, 23);
+            this.mtest.TabIndex = 8;
+            this.mtest.Text = "M_TEST";
+            this.mtest.UseVisualStyleBackColor = true;
+            this.mtest.Click += new System.EventHandler(this.mtest_Click);
             // 
             // panel1
             // 
@@ -212,7 +237,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(296, 337);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 377);
+            this.panel1.Size = new System.Drawing.Size(347, 345);
             this.panel1.TabIndex = 7;
             // 
             // label3
@@ -264,7 +289,7 @@
             this.LeftPanel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.LeftPanel.Location = new System.Drawing.Point(12, 3);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(278, 713);
+            this.LeftPanel.Size = new System.Drawing.Size(278, 681);
             this.LeftPanel.TabIndex = 2;
             // 
             // button2
@@ -287,6 +312,45 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(118, 255);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(33, 17);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "Z";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // vektorszorz
+            // 
+            this.vektorszorz.Location = new System.Drawing.Point(117, 70);
+            this.vektorszorz.Name = "vektorszorz";
+            this.vektorszorz.Size = new System.Drawing.Size(75, 23);
+            this.vektorszorz.TabIndex = 10;
+            this.vektorszorz.Text = "M* input";
+            this.vektorszorz.UseVisualStyleBackColor = true;
+            this.vektorszorz.Click += new System.EventHandler(this.vektorszorz_Click);
+            // 
+            // buttonHamming
+            // 
+            this.buttonHamming.Location = new System.Drawing.Point(118, 307);
+            this.buttonHamming.Name = "buttonHamming";
+            this.buttonHamming.Size = new System.Drawing.Size(75, 23);
+            this.buttonHamming.TabIndex = 9;
+            this.buttonHamming.Text = "Hamming";
+            this.buttonHamming.UseVisualStyleBackColor = true;
+            this.buttonHamming.Click += new System.EventHandler(this.buttonHamming_Click);
+            // 
+            // labelHamming
+            // 
+            this.labelHamming.AutoSize = true;
+            this.labelHamming.Location = new System.Drawing.Point(26, 19);
+            this.labelHamming.Name = "labelHamming";
+            this.labelHamming.Size = new System.Drawing.Size(13, 13);
+            this.labelHamming.TabIndex = 8;
+            this.labelHamming.Text = "h";
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(36, 308);
@@ -304,7 +368,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 6;
-            this.button8.Text = "Run Once";
+            this.button8.Text = "Run 256";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -367,69 +431,28 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // labelHamming
+            // label256
             // 
-            this.labelHamming.AutoSize = true;
-            this.labelHamming.Location = new System.Drawing.Point(36, 343);
-            this.labelHamming.Name = "labelHamming";
-            this.labelHamming.Size = new System.Drawing.Size(0, 13);
-            this.labelHamming.TabIndex = 8;
+            this.label256.AutoSize = true;
+            this.label256.Location = new System.Drawing.Point(118, 282);
+            this.label256.Name = "label256";
+            this.label256.Size = new System.Drawing.Size(0, 13);
+            this.label256.TabIndex = 12;
             // 
-            // buttonHamming
+            // panel2
             // 
-            this.buttonHamming.Location = new System.Drawing.Point(118, 307);
-            this.buttonHamming.Name = "buttonHamming";
-            this.buttonHamming.Size = new System.Drawing.Size(75, 23);
-            this.buttonHamming.TabIndex = 9;
-            this.buttonHamming.Text = "Hamming";
-            this.buttonHamming.UseVisualStyleBackColor = true;
-            this.buttonHamming.Click += new System.EventHandler(this.buttonHamming_Click);
-            // 
-            // mtest
-            // 
-            this.mtest.Location = new System.Drawing.Point(378, 304);
-            this.mtest.Name = "mtest";
-            this.mtest.Size = new System.Drawing.Size(71, 23);
-            this.mtest.TabIndex = 8;
-            this.mtest.Text = "M_TEST";
-            this.mtest.UseVisualStyleBackColor = true;
-            this.mtest.Click += new System.EventHandler(this.mtest_Click);
-            // 
-            // vektorszorz
-            // 
-            this.vektorszorz.Location = new System.Drawing.Point(117, 70);
-            this.vektorszorz.Name = "vektorszorz";
-            this.vektorszorz.Size = new System.Drawing.Size(75, 23);
-            this.vektorszorz.TabIndex = 10;
-            this.vektorszorz.Text = "M* input";
-            this.vektorszorz.UseVisualStyleBackColor = true;
-            this.vektorszorz.Click += new System.EventHandler(this.vektorszorz_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(118, 255);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(33, 17);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Z";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(455, 304);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "MZ matrices";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.labelHamming);
+            this.panel2.Location = new System.Drawing.Point(36, 341);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(417, 341);
+            this.panel2.TabIndex = 13;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1201, 765);
+            this.ClientSize = new System.Drawing.Size(1201, 733);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -448,6 +471,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,6 +516,8 @@
         private System.Windows.Forms.Button vektorszorz;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Label label256;
+        private System.Windows.Forms.Panel panel2;
 
 
 
